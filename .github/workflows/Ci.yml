@@ -30,3 +30,15 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Build and Push Docker image
+        # this is the public GitHub Action where all for Docker commands are
+        uses: mr-smithers-excellent/docker-build-push@v4
+        # all the configuration to make this action
+        with:
+          # name of image
+          image: fracnsico/novyrufront
+          registry: docker.io
+          # credentials for Docker
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
