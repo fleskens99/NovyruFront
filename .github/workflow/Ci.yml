@@ -31,6 +31,14 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Check Dockerfile
+        run: |
+          pwd
+          ls -la
+          echo "Looking for Dockerfiles:"
+          find . -name "Dockerfile" -o -name "Dockerfile.*"
+        
+
       - name: Build and Push Docker image
         # this is the public GitHub Action where all for Docker commands are
         uses: mr-smithers-excellent/docker-build-push@v4
