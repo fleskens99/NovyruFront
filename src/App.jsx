@@ -1,11 +1,11 @@
 import './Styling/App.css'
 import Layout from './components/Layout'
+import Recipes from './components/Recipes'
 
 function App() {
   return (
     <Layout>
-      <h1>Welcome to Novyru</h1>
-      <p>This is a simple React app with a layout.</p>
+      <Recipes />
     </Layout>
   )
 }
