@@ -182,3 +182,89 @@
     border-right-color: var(--border);
   }
 }
+
+.first-part-section {
+  background-color: #ecd4b7;
+  padding: 60px 40px;
+  border-radius: 0px;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 180px;
+}
+
+.first-part-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-Favorite-icon {
+  width: 16px;
+  height: 16px;
+  color:white;
+  padding-right: 8px;
+  object-fit: contain;
+}
+
+.nav-shopping-list-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  position: relative;
+  top: 4px;
+}
+
+.nav-buttons {
+  display: flex;
+  padding-left: 16px;
+  gap: 24px;
+  background-color: #f3e7d8;
+  padding: 40px;
+}
+
+.nav-card {
+  background: #fff;
+  padding: 24px;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 12px;
+  width: 260px;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.nav-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.nav-icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.nav-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3a2a1a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.nav-card:hover .nav-arrow {
+  transform: translateX(6px);
+}
+
+.nav-desc {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #5a4a3a;
+  line-height: 1.4;
+}
+
