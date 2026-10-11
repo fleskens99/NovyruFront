@@ -1,0 +1,104 @@
+/* =========================================================
+   RECIPES: CARD
+   ========================================================= */
+
+.recipe-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface);
+  cursor: pointer;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.recipe-card:hover {
+  box-shadow: 0 10px 25px rgb(0 0 0 / 8%);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RECIPES: FAVORITE CONTROL
+   ========================================================= */
+
+.recipe-star {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #f5a623;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 8%);
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.recipe-star:hover {
+  background-color: #fff7e6;
+  transform: scale(1.05);
+}
+
+.recipe-star:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   RECIPES: IMAGE AND TEXT
+   ========================================================= */
+
+.recipe-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+}
+
+.recipe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recipe-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recipe-category {
+  color: #888888;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.recipe-title {
+  margin: 0;
+  color: #222222;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recipe-card,
+  .recipe-star {
+    transition: none;
+  }
+
+  .recipe-card:hover,
+  .recipe-star:hover {
+    transform: none;
+  }
+}
