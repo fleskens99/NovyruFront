@@ -58,7 +58,7 @@
 
 .recipe-star {
   position: absolute;
-  top: 20px;
+  top: 5px; 
   right: 20px;
   z-index: 1;
 
@@ -72,8 +72,8 @@
 
   border: none;
   border-radius: 50%;
-  background-color: #ffffff;
-  color: #f5a623;
+  background-color: #f3c96f;
+  color: #ffffff;
 
   font-size: 1.1rem;
   line-height: 1;
@@ -82,7 +82,7 @@
   cursor: pointer;
 
   transition:
-    background-color 0.15s ease,
+    background-color .15s ease,
     transform 0.15s ease;
 }
 
