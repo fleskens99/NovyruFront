@@ -3,8 +3,8 @@ import './Styling/General.css'
 import favoritesIcon from './assets/Layout/Favorite-Layout.png'
 import shoppingListIcon from './assets/Layout/Shopping-Cart-Layout.png'
 import accountIcon from './assets/Layout/Account-Layout.png'
-import Layout from './components/Layout'
-import Recipes from './components/Recipes'
+import Layout from './components/Index/Layout'
+import Recipes from './components/BasicRecipeInformation/Recipes'
 
 function App() {
   return (

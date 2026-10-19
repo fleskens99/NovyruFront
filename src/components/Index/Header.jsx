@@ -1,8 +1,8 @@
-import '../Styling/Header.css'
-import logo from '../assets/Layout/Logo-Layout.png'
-import favoritesIcon from '../assets/Layout/Favorite-Layout.png'
-import shoppingListIcon from '../assets/Layout/Shopping-Cart-Layout.png'
-import accountIcon from '../assets/Layout/Account-Layout.png'
+import '../../Styling/Header.css'
+import logo from '../../assets/Layout/Logo-Layout.png'
+import favoritesIcon from '../../assets/Layout/Favorite-Layout.png'
+import shoppingListIcon from '../../assets/Layout/Shopping-Cart-Layout.png'
+import accountIcon from '../../assets/Layout/Account-Layout.png'
 
 function Header(){
     return (
