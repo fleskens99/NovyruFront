@@ -1,24 +1,23 @@
+import api from "./axiosApi"; 
+
 export async function getRecipes() {
-  const response = await fetch("http://localhost:8080/api/recipes");
+  try {
+    const response = await api.get("/recipes");
 
-  if (!response.ok) {
-    const error = new Error(
-      `Failed to fetch recipes: HTTP ${response.status}`
-    );
+    const result = response.data;
 
-    error.status = response.status;
+    const recipes = Array.isArray(result)
+      ? result
+      : result?.data;
+
+    if (!Array.isArray(recipes)) {
+      throw new Error("Invalid recipe response");
+    }
+
+    return recipes;
+
+  } catch (error) {
+    console.error("Failed to fetch recipes:", error);
     throw error;
   }
-
-  const result = await response.json();
-
-  const recipes = Array.isArray(result)
-    ? result
-    : result?.data;
-
-  if (!Array.isArray(recipes)) {
-    throw new Error("Invalid recipe response");
-  }
-
-  return recipes;
 }
