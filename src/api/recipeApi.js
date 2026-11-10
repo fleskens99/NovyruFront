@@ -1,11 +1,23 @@
-import axios from "./axiosApi";
+import api from "./axiosApi"; 
 
-export const getRecipes = async () => {
+export async function getRecipes() {
   try {
-    const response = await axios.get("/recipes");
-    return response.data;
+    const response = await api.get("/recipes");
+
+    const result = response.data;
+
+    const recipes = Array.isArray(result)
+      ? result
+      : result?.data;
+
+    if (!Array.isArray(recipes)) {
+      throw new Error("Invalid recipe response");
+    }
+
+    return recipes;
+
   } catch (error) {
-    console.error("Error fetching recipes:", error);
+    console.error("Failed to fetch recipes:", error);
     throw error;
   }
-};
+}
