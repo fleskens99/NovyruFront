@@ -83,43 +83,35 @@
 
 .recipe-star {
   position: absolute;
-  top: 5px; 
+  top: 20px;
   right: 20px;
   z-index: 1;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 32px;
-  height: 32px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
   padding: 0;
-
-  border: none;
+  border: 1px solid #e9e2d7;
   border-radius: 50%;
-  background-color: #f3c96f;
-  color: #ffffff;
-
-  font-size: 1.1rem;
-  line-height: 1;
-
-  box-shadow: 0 3px 10px rgb(0 0 0 / 10%);
+  background: #ffffff;
+  color: #241b15;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 12%);
   cursor: pointer;
-
-  transition:
-    background-color .15s ease,
-    transform 0.15s ease;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
 
-.recipe-star:hover {
-  background-color: #fff7e6;
-  transform: scale(1.08);
+.recipe-star svg {
+  fill: #ffffff;
+  stroke: #241b15;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
 }
 
-.recipe-star:focus-visible {
-  outline: 2px solid var(--color-orange);
-  outline-offset: 3px;
-}
+.recipe-star--active svg { fill: #f4b729; }
+.recipe-star:hover:not(:disabled) { transform: scale(1.08); box-shadow: 0 5px 14px rgb(0 0 0 / 16%); }
+.recipe-star:disabled { cursor: wait; opacity: .6; }
+.recipe-star:focus-visible { outline: 2px solid var(--color-orange); outline-offset: 3px; }
+.recipe-error { padding: 12px 16px; color: #8b2b1a; background: #fff3ef; border: 1px solid #d69e91; border-radius: 10px; }
 
 /* =========================================================
    RECIPES: IMAGE

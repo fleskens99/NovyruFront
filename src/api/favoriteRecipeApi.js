@@ -1,28 +1,61 @@
+import api from "./axiosApi.js";
 
-import api from "./axios";
+export async function getFavorites(userId) {
+  const response = await api.get(
+    `/users/${userId}/favorites`
+  );
 
-// Get all favorite recipe IDs
-export const getFavorites = async (userId) => {
-  const response = await api.get(`/users/${userId}/favorites`);
   return response.data;
-};
+}
 
-// Add a recipe to favorites
-export const addFavorite = async (userId, recipeId) => {
-  await api.post(`/users/${userId}/favorites`, {
-    recipeId: recipeId,
-  });
-};
+export async function getFavoriteRecipes(userId) {
+  const response = await api.get(
+    `/users/${userId}/favorites/recipes`
+  );
 
-// Remove a recipe from favorites
-export const removeFavorite = async (userId, recipeId) => {
-  await api.delete(`/users/${userId}/favorites/${recipeId}`);
-};
+  return response.data;
+}
 
-// Check if a recipe is favorited
-export const checkFavorite = async (userId, recipeId) => {
+
+
+export async function addFavorite(userId, recipeId) {
+  const id = Number(recipeId);
+
+  if (!Number.isInteger(id) || id <= 0) {
+    throw new Error(`Invalid recipe ID: ${recipeId}`);
+  }
+
+  try {
+    const response = await api.post(
+      `/users/${userId}/favorites`,
+      {
+        recipeId: id,
+      }
+    );
+
+    return response.data;
+  } catch (error) {
+    console.error("Favorite API error:", {
+      status: error.response?.status,
+      data: error.response?.data,
+      recipeId: id,
+    });
+
+    throw error;
+  }
+}
+
+
+export async function removeFavorite(userId, recipeId) {
+  await api.delete(
+    `/users/${userId}/favorites/${recipeId}`
+  );
+}
+
+export async function checkFavorite(userId, recipeId) {
   const response = await api.get(
     `/users/${userId}/favorites/${recipeId}/status`
   );
+
   return response.data.favorite;
-};
+}
